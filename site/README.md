@@ -61,12 +61,26 @@ npm start
 
 ## Deployment
 
-This site is fully static and can be deployed anywhere:
+### GitHub Pages (hosted here)
+This site is automatically deployed to GitHub Pages via GitHub Actions whenever you push to `main`.
 
-- **Vercel** (recommended): `npx vercel`
-- Netlify
-- GitHub Pages (with minor config)
-- Any static hosting
+**Live URL:** https://cjessup.github.io/roof-supply/
+
+The Next.js config is set up with:
+- `output: 'export'`
+- `basePath: '/roof-supply'`
+
+The workflow lives in `.github/workflows/deploy.yml` at the repo root.
+
+To activate:
+1. Repo → Settings → Pages
+2. Source: **GitHub Actions**
+
+### Other platforms
+- Vercel: Import repo, set "Root directory" to `site`
+- Netlify: Similar, point build command to the root `npm run build` and publish dir to `site/out`
+
+See the root `README.md` for more.
 
 ## Notes & future improvements
 - The contact form currently logs to console and shows a success state (demo). You can easily connect it to Formspree, Resend, or your own API.

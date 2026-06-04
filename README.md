@@ -41,10 +41,23 @@ This version uses a modern, fast, static-friendly stack for better performance a
 
 ## Deployment
 
-The `site/` folder can be deployed independently to Vercel, Netlify, etc.
+### GitHub Pages (current hosting)
+This repo is configured to automatically deploy the website to GitHub Pages on every push to `main`.
 
-Example (Vercel):
-- Set the root directory to `site` when importing the repo, or use the root scripts.
+- Live site will be available at: **https://cjessup.github.io/roof-supply/**
+- The workflow is in `.github/workflows/deploy.yml`
+- It uses Next.js static export (`output: 'export'`) and deploys the `site/out` folder.
+
+To enable:
+1. Go to your repo on GitHub → **Settings** → **Pages**
+2. Under "Build and deployment", set **Source** to **GitHub Actions**
+
+The site is already configured with the correct `basePath: '/roof-supply'`.
+
+### Other options
+- Vercel / Netlify: Import the repo and set the build directory to `site` (or use the root `npm run build`).
+
+See `site/README.md` for local development details.
 
 ## Notes
 
