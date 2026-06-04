@@ -1,0 +1,15 @@
+{
+  "name": "roofsupply",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Root workspace for The Roof Supply Company project",
+  "scripts": {
+    "dev": "npm run dev --prefix site",
+    "build": "npm run build --prefix site",
+    "start": "npm run start --prefix site",
+    "install:site": "npm install --prefix site"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
