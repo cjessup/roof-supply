@@ -66,15 +66,13 @@ This site is automatically deployed to GitHub Pages via GitHub Actions whenever 
 
 **Live URL:** https://cjessup.github.io/roof-supply/
 
-The Next.js config is set up with:
-- `output: 'export'`
-- `basePath: '/roof-supply'`
+The Next.js config only enables `output: 'export'` + `basePath: '/roof-supply'` when `GITHUB_PAGES=true` (set automatically in the workflow).
 
-The workflow lives in `.github/workflows/deploy.yml` at the repo root.
-
-To activate:
-1. Repo → Settings → Pages
-2. Source: **GitHub Actions**
+### Local development
+```bash
+npm run dev
+```
+Then open **http://localhost:3000/** (no /roof-supply/ prefix in dev).
 
 ### Other platforms
 - Vercel: Import repo, set "Root directory" to `site`

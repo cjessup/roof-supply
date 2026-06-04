@@ -46,13 +46,22 @@ This repo is configured to automatically deploy the website to GitHub Pages on e
 
 - Live site will be available at: **https://cjessup.github.io/roof-supply/**
 - The workflow is in `.github/workflows/deploy.yml`
-- It uses Next.js static export (`output: 'export'`) and deploys the `site/out` folder.
+- It uses Next.js static export (only when `GITHUB_PAGES=true`).
 
 To enable:
 1. Go to your repo on GitHub → **Settings** → **Pages**
 2. Under "Build and deployment", set **Source** to **GitHub Actions**
 
-The site is already configured with the correct `basePath: '/roof-supply'`.
+### Local development
+From the repo root:
+
+```powershell
+npm run dev
+```
+
+Then open **http://localhost:3000/** (routes are **not** prefixed with /roof-supply/ in local dev).
+
+The `basePath` is only applied during the GitHub Pages build.
 
 ### Other options
 - Vercel / Netlify: Import the repo and set the build directory to `site` (or use the root `npm run build`).

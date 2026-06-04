@@ -1,13 +1,19 @@
 import type { NextConfig } from "next";
 
+// Only apply static export + basePath when building for GitHub Pages
+// This keeps local `npm run dev` working at http://localhost:3000/
+const isGitHubPages = process.env.GITHUB_PAGES === 'true';
+
 const nextConfig: NextConfig = {
-  output: 'export', // Static export for GitHub Pages
-  basePath: '/roof-supply', // Required because the site will be hosted at https://cjessup.github.io/roof-supply/
-  assetPrefix: '/roof-supply/',
+  ...(isGitHubPages && {
+    output: 'export',
+    basePath: '/roof-supply',
+    assetPrefix: '/roof-supply/',
+  }),
   images: {
-    unoptimized: true, // Required for static export
+    unoptimized: true,
   },
-  trailingSlash: true, // Good for GitHub Pages
+  trailingSlash: true,
 };
 
 export default nextConfig;
